@@ -67,7 +67,7 @@ class SocialAuthenticationController extends AbstractController
                 break;
         }
 
-        if (! ($localUser = $this->getLocalUser($provider, $providerUser->id))) {
+        if (! ($localUser = $this->getLocalUser($provider, (string) $providerUser->id))) {
             $localUser = $this->createLocalUser($provider, $attributes);
         }
 
